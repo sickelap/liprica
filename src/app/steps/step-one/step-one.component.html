@@ -1,0 +1,35 @@
+<div class="wrapper" cdkDropListGroup="cards">
+
+  <aside cdkDropList [cdkDropListData]="cards" (cdkDropListDropped)="drop.emit($event)">
+    <div class="card-container">
+      <mat-card *ngFor="let card of cards" cdkDrag (click)="show.emit(card)">
+        <span class="card-placeholder" *cdkDragPlaceholder></span>
+        <mat-card-title>{{ card.title }}</mat-card-title>
+        <mat-card-content>{{ card.content }}</mat-card-content>
+      </mat-card>
+    </div>
+    <div class="buttons-container">
+      <button mat-fab color="warn" (click)="reset.emit()" title="Start over">
+        <mat-icon>refresh</mat-icon>
+      </button>
+      <button mat-fab color="primary" (click)="create.emit()" title="Add new card">
+        <mat-icon>add</mat-icon>
+      </button>
+      <button mat-fab (click)="next.emit()" color="primary" [disabled]="cards.length > 0" title="Next">
+        <mat-icon>done</mat-icon>
+      </button>
+    </div>
+  </aside>
+
+  <main>
+    <div class="priority" *ngFor="let priority of priorities" cdkDropList cdkDropListOrientation="horizontal"
+         [cdkDropListSortingDisabled]="true" [cdkDropListData]="priority.items" (cdkDropListDropped)="drop.emit($event)">
+      <mat-toolbar>{{ priority.label }}</mat-toolbar>
+      <mat-card *ngFor="let card of priority.items" cdkDrag (click)="show.emit(card)">
+        <span class="card-placeholder" *cdkDragPlaceholder></span>
+        <mat-card-title>{{ card.title }}</mat-card-title>
+      </mat-card>
+    </div>
+  </main>
+
+</div>

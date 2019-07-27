@@ -1,0 +1,26 @@
+<mat-horizontal-stepper linear="true" disableRipple="true">
+
+  <mat-step editable="false" completed="false">
+    <app-step-one [cards]="cards"
+                  [priorities]="priorities"
+                  (drop)="onDrop($event)"
+                  (next)="onNext()"
+                  (reset)="onReset()"
+                  (create)="onCreate()"
+                  (show)="onShow($event)">
+    </app-step-one>
+  </mat-step>
+
+  <mat-step editable="false" completed="false">
+    <app-step-two [deck]="priorities[0]" (next)="onNext()"></app-step-two>
+  </mat-step>
+
+  <mat-step editable="false" completed="false">
+    <app-step-three (next)="onNext()"></app-step-three>
+  </mat-step>
+
+  <mat-step editable="false" completed="false">
+    <app-step-four></app-step-four>
+  </mat-step>
+
+</mat-horizontal-stepper>

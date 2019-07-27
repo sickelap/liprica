@@ -1,0 +1,17 @@
+<!--suppress HtmlFormInputWithoutLabel -->
+<header>Add New Card</header>
+
+<main>
+  <form [formGroup]="form" (ngSubmit)="dialogRef.close(form.value)">
+    <mat-form-field>
+      <input matInput placeholder="Card Title" value="" formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Description" formControlName="content"></textarea>
+    </mat-form-field>
+  </form>
+
+  <button mat-button [disabled]="form.invalid" type="submit">Add</button>
+  <button mat-button (click)="dialogRef.close()">Cancel</button>
+</main>

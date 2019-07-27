@@ -1,0 +1,57 @@
+@import "../../../vars";
+
+.wrapper {
+  display: flex;
+}
+
+aside {
+  flex: 0 0 300px;
+  position: relative;
+
+  mat-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 20px;
+    min-height: 150px;
+  }
+
+  .card-container {
+    min-height: 150px;
+  }
+
+  .buttons-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+}
+
+main {
+  flex: auto;
+
+  .priority {
+    border: solid 1px black;
+    min-height: 150px;
+    margin-bottom: 20px;
+    padding: 5px;
+
+    mat-card {
+      margin: 5px;
+    }
+  }
+}
+
+mat-card {
+  min-width: 250px;
+  max-width: 300px;
+  display: inline-block;
+
+  mat-card-title {
+    font-size: $card-title-font-size;
+  }
+
+  mat-card-content {
+    font-size: $card-content-font-size;
+  }
+}
