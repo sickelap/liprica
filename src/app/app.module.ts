@@ -12,7 +12,6 @@ import {
   MatStepperModule,
   MatToolbarModule
 } from "@angular/material";
-import {HeaderComponent} from './components/header/header.component';
 import {CardComponent} from './components/card/card.component';
 import {StepOneComponent} from './steps/step-one/step-one.component';
 import {StepTwoComponent} from './steps/step-two/step-two.component';
@@ -24,7 +23,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     CardComponent,
     StepOneComponent,
     StepTwoComponent,
