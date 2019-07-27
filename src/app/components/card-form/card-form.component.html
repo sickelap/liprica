@@ -12,6 +12,6 @@
     </mat-form-field>
   </form>
 
-  <button mat-button [disabled]="form.invalid" type="submit">Add</button>
+  <button mat-button (click)="dialogRef.close(form.value)" [disabled]="form.invalid" type="submit">Add</button>
   <button mat-button (click)="dialogRef.close()">Cancel</button>
 </main>

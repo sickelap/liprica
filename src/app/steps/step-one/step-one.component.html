@@ -12,7 +12,7 @@
       <button mat-fab color="warn" (click)="reset.emit()" title="Start over">
         <mat-icon>refresh</mat-icon>
       </button>
-      <button mat-fab color="primary" (click)="create.emit()" title="Add new card">
+      <button mat-fab color="primary" (click)="onCreate()" title="Add new card">
         <mat-icon>add</mat-icon>
       </button>
       <button mat-fab (click)="next.emit()" color="primary" [disabled]="cards.length > 0" title="Next">

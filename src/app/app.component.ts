@@ -44,18 +44,6 @@ export class AppComponent implements OnInit {
     this.dialog.open(CardComponent, {data: card});
   }
 
-  onCreate() {
-    const subscription = this.dialog
-      .open(CardFormComponent, {width: '300px'})
-      .afterClosed()
-      .subscribe(card => {
-        if (card) {
-          this.priorities[0].items.push(card);
-        }
-        subscription.unsubscribe();
-      });
-  }
-
   onReset() {
     this.ngOnInit();
     this.stepper.reset();

@@ -3,10 +3,9 @@
   <mat-step editable="false" completed="false">
     <app-step-one [cards]="cards"
                   [priorities]="priorities"
-                  (drop)="onDrop($event)"
                   (next)="onNext()"
                   (reset)="onReset()"
-                  (create)="onCreate()"
+                  (drop)="onDrop($event)"
                   (show)="onShow($event)">
     </app-step-one>
   </mat-step>
