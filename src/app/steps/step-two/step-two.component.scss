@@ -1,0 +1,28 @@
+@import "../../../vars";
+
+.wrapper {
+  display: flex;
+}
+
+.priority {
+  flex: 50%;
+  margin: 0 20px;
+  border: solid 1px black;
+  min-height: 150px;
+  padding: 5px;
+}
+
+mat-card {
+  min-width: 250px;
+  max-width: 300px;
+  display: inline-block;
+  margin: 5px;
+
+  mat-card-title {
+    font-size: $card-title-font-size;
+  }
+
+  mat-card-content {
+    font-size: $card-content-font-size;
+  }
+}

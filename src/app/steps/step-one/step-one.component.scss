@@ -4,6 +4,14 @@
   display: flex;
 }
 
+.cdk-drag-animating {
+  transition: transform 100ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+mat-card.cdk-drag-dragging {
+  //height: 20px;
+}
+
 aside {
   flex: 0 0 300px;
   position: relative;
@@ -14,6 +22,7 @@ aside {
     left: 0;
     right: 20px;
     min-height: 150px;
+    max-height: 150px;
   }
 
   .card-container {
@@ -35,17 +44,14 @@ main {
     min-height: 150px;
     margin-bottom: 20px;
     padding: 5px;
-
-    mat-card {
-      margin: 5px;
-    }
   }
 }
 
 mat-card {
-  min-width: 250px;
-  max-width: 300px;
+  width: 250px;
+  //height: 20px;
   display: inline-block;
+  margin: 5px;
 
   mat-card-title {
     font-size: $card-title-font-size;

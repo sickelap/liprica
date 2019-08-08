@@ -11,7 +11,13 @@
   </mat-step>
 
   <mat-step editable="false" completed="false">
-    <app-step-two [deck]="priorities[0]" (next)="onNext()"></app-step-two>
+    <app-step-two [left]="priorities[0]"
+                  [right]="selected"
+                  (next)="onNext()"
+                  (reset)="onReset()"
+                  (drop)="onDrop($event)"
+                  (show)="onShow($event)">
+    </app-step-two>
   </mat-step>
 
   <mat-step editable="false" completed="false">

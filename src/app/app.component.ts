@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   @ViewChild(MatStepper, {static: true}) stepper;
   cards: Array<Card>;
   priorities: Array<CardPriority>;
+  selected: CardPriority;
 
   constructor(private dialog: MatDialog) {
   }
@@ -50,18 +51,21 @@ export class AppComponent implements OnInit {
   }
 
   private initializeContent() {
-    this.cards = Array(2).fill(null).map((_, idx) => {
+    this.cards = Array(7).fill(null).map((_, idx) => {
       return {
         title: `Title ${idx + 1}`,
         content: `Content ${idx + 1}`,
         weight: 5
       };
     });
-
     this.priorities = [
       {items: [], label: 'Very important to me'},
       {items: [], label: 'Important to me'},
       {items: [], label: 'Less important to me'},
     ];
+    this.selected = {
+      items: [],
+      label: 'Most important to me'
+    };
   }
 }
